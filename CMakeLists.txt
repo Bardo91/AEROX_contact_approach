@@ -19,6 +19,7 @@ find_package(OpenCV REQUIRED)
 target_link_libraries(image_try LINK_PUBLIC ${OpenCV_LIBRARIES})
 target_include_directories(image_try PUBLIC ${OpenCV_INCLUDE_DIR})
 
+
 ########################################################
 
 add_executable(temp_mask 	src/temp_mask.cpp)
@@ -31,3 +32,18 @@ find_package(realsense2 REQUIRED)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 target_link_libraries(temp_mask LINK_PUBLIC ${realsense2_LIBRARY})
+
+########################################################
+
+add_executable(cam_match	src/cam_match.cpp)
+
+find_package(OpenCV REQUIRED)
+target_link_libraries(cam_match LINK_PUBLIC ${OpenCV_LIBRARIES})
+target_include_directories(cam_match PUBLIC ${OpenCV_INCLUDE_DIR})
+
+find_package(realsense2 REQUIRED)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+target_link_libraries(cam_match LINK_PUBLIC ${realsense2_LIBRARY})
+
+
