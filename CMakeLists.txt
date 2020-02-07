@@ -46,4 +46,15 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 target_link_libraries(cam_match LINK_PUBLIC ${realsense2_LIBRARY})
 
+########################################################
 
+add_executable(cam_match_resize	src/cam_match_resize.cpp)
+
+find_package(OpenCV REQUIRED)
+target_link_libraries(cam_match_resize LINK_PUBLIC ${OpenCV_LIBRARIES})
+target_include_directories(cam_match_resize PUBLIC ${OpenCV_INCLUDE_DIR})
+
+find_package(realsense2 REQUIRED)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+target_link_libraries(cam_match_resize LINK_PUBLIC ${realsense2_LIBRARY})
