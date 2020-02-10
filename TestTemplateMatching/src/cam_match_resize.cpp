@@ -1,13 +1,12 @@
-#include "opencv2/imgcodecs.hpp" // OpenCV libraries
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
+#include <opencv2/imgcodecs.hpp> // OpenCV libraries
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 
 #include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
-//#include <opencv2/opencv.hpp>   // Include OpenCV API
-#include <unistd.h>
-//#include <opencv2/highgui/highgui.hpp>
 
+#include <unistd.h>
 #include <iostream>
+
 using namespace std;
 using namespace cv;
 
@@ -24,7 +23,7 @@ int main(int argc, char **argv) {
     pipe.start();
     
     Mat templ = imread(argv[1], CV_LOAD_IMAGE_COLOR);
-    cout << argv[1] << endl;
+    //cout << argv[1] << endl;
 
     if( templ.rows == 0 ) { // Check for invalid template
         cout <<  "Could not open or find the image" << std::endl ;
@@ -115,9 +114,9 @@ void MatchingMethod(Mat &_input, std::vector<cv::Mat> &_temp){
         }
         
     }
-    /*We have two images displayed: the actual camera image and a gray scale 
-    image(result) that represents the amount of matching made by the template 
-    in each point (more white=more matching)*/
+    //We have two images displayed: the actual camera image and a gray scale 
+    //image(result) that represents the amount of matching made by the template 
+    //in each point (more white=more matching)
     rectangle(img_display, matchLoc, Point(matchLoc.x + cols, matchLoc.y + rows), Scalar::all(0), 2, 8, 0);
     rectangle(result, matchLoc, Point(matchLoc.x + cols, matchLoc.y + rows), Scalar::all(0), 2, 8, 0);
     imshow(image_window, img_display);

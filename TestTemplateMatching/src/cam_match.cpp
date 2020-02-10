@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     // Start streaming with default recommended configuration
     pipe.start();
 
-    Mat templ = imread("/home/ana/programming/AEROX_contact_approach/botella4.jpg", CV_LOAD_IMAGE_COLOR);
+    Mat templ = imread("/home/ana/programming/AEROX_contact_approach/botella3.jpg", CV_LOAD_IMAGE_COLOR);
 
     if( templ.rows == 0 ) { // Check for invalid template
         cout <<  "Could not open or find the image" << std::endl ;
