@@ -1,18 +1,9 @@
+#include <TemplateMatching.h>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
 #include <unistd.h>
 #include <iostream>
-
-class TemplateMatching{
-    public:
-    cv::Mat templ;
-    TemplateMatching(std::string);
-    void matchingMethod(cv::Mat &_input);
-    private:
-    std::vector<cv::Mat> templ_resize;
-
-};
 
 TemplateMatching::TemplateMatching(std::string _argv){
     int i;
