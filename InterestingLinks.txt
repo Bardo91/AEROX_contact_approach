@@ -1,0 +1,14 @@
+Optical Flow:
+- Some info: https://nanonets.com/blog/optical-flow/
+(SPARSE METHODS)
+- OpenCV’s implementation of Shi-Tomasi(goodFeatureToTrack): https://docs.opencv.org/3.0-beta/modules/imgproc/doc/feature_detection.html#goodfeaturestotrack
+- Lucas-Kanade paper: https://pdfs.semanticscholar.org/6841/d3368d4dfb52548cd0ed5fef29199d14c014.pdf
+- Other Lucas Kanade paper: http://robots.stanford.edu/cs223b04/algo_tracking.pdf
+- OpenCV Lukas-Kanade documentation:https://docs.opencv.org/3.0-beta/modules/video/doc/motion_analysis_and_object_tracking.html#calcopticalflowpyrlk
+(DENSE METHODS)
+- Fanerback method paper: https://link.springer.com/content/pdf/10.1007%2F3-540-45103-X_50.pdf
+- OpenCV Fanerback documentation:https://docs.opencv.org/3.0-beta/modules/video/doc/motion_analysis_and_object_tracking.html#calcopticalflowfarneback
+(TUTORIAL FOLLOWED)
+- OpenCV classes: https://docs.opencv.org/4.2.0/d2/d84/group__optflow.html
+- OpenCV tutorial (Lukas-Kanade & dense methods): https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html
+
