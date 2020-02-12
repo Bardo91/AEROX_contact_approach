@@ -1,4 +1,5 @@
 #include <opencv2/core.hpp>
+#include <opencv2/features2d.hpp>
 
 class FeatureMatching{
     public:
@@ -10,4 +11,6 @@ class FeatureMatching{
     int minHessian = 400;
     std::vector<cv::KeyPoint> keypoints_templ_;
     cv::Mat descriptors_templ_;
+    cv::Ptr<cv::ORB> detector;
+    cv::Ptr<cv::DescriptorMatcher> matcher;
 };

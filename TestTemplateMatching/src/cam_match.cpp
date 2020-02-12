@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     // Start streaming with default recommended configuration
     pipe.start();
 
-    Mat templ = imread("/home/ana/programming/AEROX_contact_approach/botella3.jpg", CV_LOAD_IMAGE_COLOR);
+    Mat templ = imread("/home/ana/programming/AEROX_contact_approach/TestTemplateMatching/botella4.jpg", CV_LOAD_IMAGE_COLOR);
 
     if( templ.rows == 0 ) { // Check for invalid template
         cout <<  "Could not open or find the image" << std::endl ;
@@ -79,6 +79,7 @@ void MatchingMethod(Mat _input, Mat _temp){
     rectangle(img_display, matchLoc, Point(matchLoc.x + _temp.cols, matchLoc.y + _temp.rows), Scalar::all(0), 2, 8, 0);
     rectangle(result, matchLoc, Point(matchLoc.x + _temp.cols, matchLoc.y + _temp.rows), Scalar::all(0), 2, 8, 0);
     imshow(image_window, img_display);
+    //imwrite("result.jpg",img_display);
     imshow(result_window, result);
     return;
 }
