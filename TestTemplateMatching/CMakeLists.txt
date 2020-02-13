@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(contact_approach)
+include_directories(include)
 
 ########################################################
 add_executable(imshow_test 	src/imshow_test.cpp)
