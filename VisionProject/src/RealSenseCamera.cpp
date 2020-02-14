@@ -9,7 +9,7 @@ RealSenseCamera::RealSenseCamera(){
 
 void RealSenseCamera::setImage(){
     rs2::frameset data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
-    auto color = data.get_color_frame(); //Get color image only
+    color = data.get_color_frame(); //Get color image only
 
     // Query frame size (width and height)
     const int w = color.as<rs2::video_frame>().get_width();
@@ -24,7 +24,12 @@ void RealSenseCamera::setImage(){
 
 cv::Mat RealSenseCamera::getImage(){
     rs2::frameset data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
-    auto color = data.get_color_frame(); //Get color image only
+    color = data.get_color_frame(); //Get color image only
+
+    rs2::pointcloud pc;
+    pc.map_to(color);//where the pointcloud has to map
+    auto depth = data.get_depth_frame();
+    points = pc.calculate(depth); //generate pointcloud
 
     // Query frame size (width and height)
     const int w = color.as<rs2::video_frame>().get_width();
@@ -40,4 +45,9 @@ cv::Mat RealSenseCamera::getImage(){
 
 RealSenseCamera& RealSenseCamera::operator>>(cv::Mat &giveframe){
     giveframe=getImage();
+}
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr RealSenseCamera::getPointCloud(){
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud = cloudVision.pcl(points, color);
+    return cloud;
 }
