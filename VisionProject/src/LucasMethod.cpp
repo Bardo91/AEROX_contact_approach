@@ -20,6 +20,7 @@ LucasMethod::LucasMethod(cv::Mat &_input){
     goodFeaturesToTrack(old_gray, p0, 100, 0.3, 7, cv::Mat(), 7, false, 0.04);
     // Create a mask image for drawing purposes
     mask = cv::Mat::zeros(old_frame.size(), old_frame.type());
+    criteria = cv::TermCriteria((cv::TermCriteria::COUNT) + (cv::TermCriteria::EPS), 10, 0.03);
 }
 
 void LucasMethod::method(cv::Mat &_input){
@@ -29,7 +30,6 @@ void LucasMethod::method(cv::Mat &_input){
     // calculate optical flow
     std::vector<uchar> status;
     std::vector<float> err;
-    cv::TermCriteria criteria = cv::TermCriteria((cv::TermCriteria::COUNT) + (cv::TermCriteria::EPS), 10, 0.03);
     cv::calcOpticalFlowPyrLK(old_gray, frame_gray, p0, p1, status, err, cv::Size(15,15), 2, criteria);
     std::vector<cv::Point2f> good_new;
     for(uint i = 0; i < p0.size(); i++)

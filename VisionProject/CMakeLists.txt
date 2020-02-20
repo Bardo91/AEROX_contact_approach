@@ -34,3 +34,5 @@ target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC ${realsense2_LIBRARY})
 
 target_include_directories(VisionFauli_LIBRARY PUBLIC ${PCL_INCLUDE_DIRS})
 target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC ${PCL_LIBRARIES} )
+
+target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC -lprofiler)

@@ -8,4 +8,5 @@ class LucasMethod{
         cv::Mat old_frame, old_gray;
         std::vector<cv::Point2f> p0, p1;
         cv::Mat mask;
+        cv::TermCriteria criteria;
 };
