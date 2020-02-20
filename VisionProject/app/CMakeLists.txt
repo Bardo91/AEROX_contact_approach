@@ -27,4 +27,10 @@ add_executable(pointsviewer	mainApproachPCL.cpp)
 
 target_link_libraries(pointsviewer LINK_PUBLIC VisionFauli_LIBRARY)
 
+########################################################
+add_executable(tm_thread	mainTemplMatchThread.cpp)
+
+target_link_libraries(tm_thread PUBLIC VisionFauli_LIBRARY)
+
+
 

@@ -20,6 +20,10 @@ find_package( PCL 1.8 REQUIRED )
 add_definitions(${PCL_DEFINITIONS})
 
 ########################################################
+find_package(OpenMP REQUIRED)
+
+
+########################################################
 add_library(VisionFauli_LIBRARY SHARED src/RealSenseCamera.cpp   include/RealSenseCamera.h 
                                        src/TemplateMatching.cpp  include/TemplateMatching.h
                                        src/FeatureMatching.cpp   include/FeatureMatching.h
@@ -36,3 +40,5 @@ target_include_directories(VisionFauli_LIBRARY PUBLIC ${PCL_INCLUDE_DIRS})
 target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC ${PCL_LIBRARIES} )
 
 target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC -lprofiler)
+
+target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC OpenMP::OpenMP_CXX)
