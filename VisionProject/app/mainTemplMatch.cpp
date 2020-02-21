@@ -1,6 +1,7 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include <gperftools/profiler.h>
+#include <chrono>
 
 #include <TemplateMatching.h>
 #include <RealSenseCamera.h>
@@ -28,8 +29,12 @@ int main(int _argc, char **_argv){
     ProfilerStart(fileName.c_str());
     while(run){
         realSenseCamera.setImage();
+        auto start = std::chrono::system_clock::now();
         templateMatching.matchingMethod(realSenseCamera.img);
+        auto end = std::chrono::system_clock::now();
         cv::waitKey(3);
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        std::cout << elapsed.count() << '\n';
     }
     cv::destroyAllWindows();
     ProfilerStop();

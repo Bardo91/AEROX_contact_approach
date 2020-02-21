@@ -1,10 +1,10 @@
 #include <opencv2/core.hpp> // OpenCV libraries
 
-class TemplateMatching{
+class TemplateMatchThread{
     public:
     cv::Mat templ;
-    TemplateMatching(std::string);
-    void matchingMethod(cv::Mat &_input);
+    TemplateMatchThread(std::string);
+    void matchThread(cv::Mat &_input);
     private:
     std::vector<cv::Mat> templ_resize;
 };

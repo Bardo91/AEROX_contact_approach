@@ -24,12 +24,13 @@ find_package(OpenMP REQUIRED)
 
 
 ########################################################
-add_library(VisionFauli_LIBRARY SHARED src/RealSenseCamera.cpp   include/RealSenseCamera.h 
-                                       src/TemplateMatching.cpp  include/TemplateMatching.h
-                                       src/FeatureMatching.cpp   include/FeatureMatching.h
-                                       src/LucasMethod.cpp       include/LucasMethod.h
-                                       src/FarnebackMethod.cpp   include/FarnebackMethod.h
-                                       src/PCLUse.cpp            include/PCLUse.h)
+add_library(VisionFauli_LIBRARY SHARED src/RealSenseCamera.cpp      include/RealSenseCamera.h 
+                                       src/TemplateMatching.cpp     include/TemplateMatching.h
+                                       src/FeatureMatching.cpp      include/FeatureMatching.h
+                                       src/LucasMethod.cpp          include/LucasMethod.h
+                                       src/FarnebackMethod.cpp      include/FarnebackMethod.h
+                                       src/PCLUse.cpp               include/PCLUse.h
+                                       src/TemplateMatchThread.cpp  include/TemplateMatchThread.h)
 
 target_link_libraries(VisionFauli_LIBRARY LINK_PUBLIC ${OpenCV_LIBRARIES})
 target_include_directories(VisionFauli_LIBRARY PUBLIC ${OpenCV_INCLUDE_DIR})
