@@ -18,7 +18,7 @@ void signal_callback_handler(int signum) {
 int main(int _argc, char **_argv){
     signal(SIGINT, signal_callback_handler);
 
-    RealSenseCamera realSenseCamera;
+    RealSenseCamera realSenseCamera(0);
     TemplateMatching templateMatching(_argv[1]);
 
     if(templateMatching.templ.rows == 0 ) { // Check for invalid template

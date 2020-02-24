@@ -19,7 +19,7 @@ int main(int _argc, char **_argv){
     signal(SIGINT, signal_callback_handler);
 
     cv::Mat image;
-    RealSenseCamera realSenseCamera;
+    RealSenseCamera realSenseCamera(0);
     realSenseCamera>>image;
     LucasMethod lucas(image);
 

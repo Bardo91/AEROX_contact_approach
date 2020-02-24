@@ -7,7 +7,7 @@
 
 int main (int _argc, char **_argv){
 
-  RealSenseCamera realSenseCamera;
+  RealSenseCamera realSenseCamera(0);
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud;
   pcl::visualization::CloudViewer viewer ("Simple Cloud Viewer");
 

@@ -14,7 +14,13 @@ Optical Flow:
 
 PCL code:
 - From camera to PCL: https://github.com/eMrazSVK/JetsonSLAM/blob/master/pcl_testing.cpp
--PCL visualization: http://pointclouds.org/documentation/tutorials/cloud_viewer.php#cloud-viewer
+- PCL visualization: http://pointclouds.org/documentation/tutorials/cloud_viewer.php#cloud-viewer
+                     http://docs.pointclouds.org/1.8.1/classpcl_1_1visualization_1_1_p_c_l_visualizer.html#ae4fd72dee3627d9f5e2cb5a71c053211
 
-gperftools & KCachetools:
+gperftools & KCachetools: documentation is very bad
+
+RealSense T265: https://github.com/IntelRealSense/librealsense/blob/master/doc/t265.md
+                https://github.com/IntelRealSense/librealsense/blob/master/doc/img/T265_orientation_axis.png
+
+Eigen matrix: https://www.cc.gatech.edu/classes/AY2015/cs4496_spring/Eigen.html
 

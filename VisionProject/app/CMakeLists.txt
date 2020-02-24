@@ -32,5 +32,10 @@ add_executable(tm_thread	mainTemplMatchThread.cpp)
 
 target_link_libraries(tm_thread PUBLIC VisionFauli_LIBRARY)
 
+########################################################
+add_executable(pose	mainPose.cpp)
+
+target_link_libraries(pose PUBLIC VisionFauli_LIBRARY)
+
 
 
