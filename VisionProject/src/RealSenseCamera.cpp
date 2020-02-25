@@ -95,6 +95,6 @@ RealSenseCamera& RealSenseCamera::operator<<(pcl::PointCloud<pcl::PointXYZRGB>::
     _givecloud=getPointCloud();
 }
 
-RealSenseCamera& RealSenseCamera::operator=(Eigen::Matrix4f &_pose){//rs2_pose &_pose){
+RealSenseCamera& RealSenseCamera::operator>>(Eigen::Matrix4f &_pose){//rs2_pose &_pose){
     _pose=getPoseMatrix();
 }

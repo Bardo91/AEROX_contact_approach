@@ -13,7 +13,7 @@ class RealSenseCamera{
         void setImage();
         RealSenseCamera &operator>> (cv::Mat &_giveframe);
         RealSenseCamera &operator<< (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_givecloud);
-        RealSenseCamera &operator= (Eigen::Matrix4f &_pose);//rs2_pose &_pose);
+        RealSenseCamera &operator>> (Eigen::Matrix4f &_pose);//rs2_pose &_pose);
     private:
         rs2::pipeline pipe;
         rs2::config cfg;
