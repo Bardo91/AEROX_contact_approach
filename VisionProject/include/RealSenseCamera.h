@@ -10,15 +10,15 @@ class RealSenseCamera{
     public:
         RealSenseCamera(bool newCam);
         cv::Mat img;
-        void setImage();
-        RealSenseCamera &operator>> (cv::Mat &_giveframe);
-        RealSenseCamera &operator<< (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_givecloud);
-        RealSenseCamera &operator>> (Eigen::Matrix4f &_pose);//rs2_pose &_pose);
+        void setImage(); //eliminar para libreria buena
+        RealSenseCamera &operator>> (cv::Mat &_giveframe); //image
+        RealSenseCamera &operator>> (pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_givecloud); //pointcloud
+        RealSenseCamera &operator>> (Eigen::Matrix4f &_pose); //pose matrix
     private:
         rs2::pipeline pipe;
         rs2::config cfg;
-        cv::Mat getImage();
         PCLUse cloudVision;
+        cv::Mat getImage();
         pcl::PointCloud<pcl::PointXYZRGB>::Ptr getPointCloud();
         rs2_pose getPose();
         Eigen::Matrix4f getPoseMatrix();

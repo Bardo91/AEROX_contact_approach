@@ -14,7 +14,7 @@ int main (int _argc, char **_argv){
   std::string fileName = "PCL_"+std::to_string(time(NULL));
   ProfilerStart(fileName.c_str());
   while(!viewer.wasStopped ()){
-    realSenseCamera<<cloud;
+    realSenseCamera>>cloud;
     viewer.showCloud (cloud);
   }
   ProfilerStop();

@@ -18,7 +18,7 @@ RealSenseCamera::RealSenseCamera(bool newCam){
     }
 }
 
-void RealSenseCamera::setImage(){
+void RealSenseCamera::setImage(){ // eliminar para libreria buena
     rs2::frameset data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
     rs2::video_frame color = data.get_color_frame(); //Get color image only
 
@@ -91,7 +91,7 @@ RealSenseCamera& RealSenseCamera::operator>>(cv::Mat &_giveframe){
     _giveframe=getImage();
 }
 
-RealSenseCamera& RealSenseCamera::operator<<(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_givecloud){
+RealSenseCamera& RealSenseCamera::operator>>(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &_givecloud){
     _givecloud=getPointCloud();
 }
 
