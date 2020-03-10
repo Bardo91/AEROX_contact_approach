@@ -24,3 +24,9 @@ RealSense T265: https://github.com/IntelRealSense/librealsense/blob/master/doc/t
 
 Eigen matrix: https://www.cc.gatech.edu/classes/AY2015/cs4496_spring/Eigen.html
 
+Mavlink and SITL:http://wiki.ros.org/mavros#Subscribed_Topics-1
+       		 https://dev.px4.io/v1.9.0/en/ros/mavros_offboard.html
+		 https://github.com/Intelligent-Quads/iq_gnc/blob/master/include/gnc_functions.hpp
+
+
+Teraranger Evo 64px: https://github.com/Terabee/sample_codes/blob/master/Python/Evo_64px_visualization_py3.py
